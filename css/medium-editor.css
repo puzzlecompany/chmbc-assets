@@ -1,0 +1,640 @@
+
+/* medium-editor.min.css */
+
+.medium-editor-anchor-preview,
+.medium-editor-toolbar { 
+	font-size: 16px;
+	z-index: 2000
+}
+
+@-webkit-keyframes medium-editor-image-loading {
+	0% {
+		-webkit-transform: scale(0);
+		transform: scale(0)
+	}
+	100% {
+		-webkit-transform: scale(1);
+		transform: scale(1)
+	}
+}
+
+@keyframes medium-editor-image-loading {
+	0% {
+		-webkit-transform: scale(0);
+		transform: scale(0)
+	}
+	100% {
+		-webkit-transform: scale(1);
+		transform: scale(1)
+	}
+}
+
+@-webkit-keyframes medium-editor-pop-upwards {
+	0% {
+		opacity: 0;
+		-webkit-transform: matrix(.97, 0, 0, 1, 0, 12);
+		transform: matrix(.97, 0, 0, 1, 0, 12)
+	}
+	20% {
+		opacity: .7;
+		-webkit-transform: matrix(.99, 0, 0, 1, 0, 2);
+		transform: matrix(.99, 0, 0, 1, 0, 2)
+	}
+	40% {
+		opacity: 1;
+		-webkit-transform: matrix(1, 0, 0, 1, 0, -1);
+		transform: matrix(1, 0, 0, 1, 0, -1)
+	}
+	100% {
+		-webkit-transform: matrix(1, 0, 0, 1, 0, 0);
+		transform: matrix(1, 0, 0, 1, 0, 0)
+	}
+}
+
+@keyframes medium-editor-pop-upwards {
+	0% {
+		opacity: 0;
+		-webkit-transform: matrix(.97, 0, 0, 1, 0, 12);
+		transform: matrix(.97, 0, 0, 1, 0, 12)
+	}
+	20% {
+		opacity: .7;
+		-webkit-transform: matrix(.99, 0, 0, 1, 0, 2);
+		transform: matrix(.99, 0, 0, 1, 0, 2)
+	}
+	40% {
+		opacity: 1;
+		-webkit-transform: matrix(1, 0, 0, 1, 0, -1);
+		transform: matrix(1, 0, 0, 1, 0, -1)
+	}
+	100% {
+		-webkit-transform: matrix(1, 0, 0, 1, 0, 0);
+		transform: matrix(1, 0, 0, 1, 0, 0)
+	}
+}
+
+.medium-editor-anchor-preview {
+	left: 0;
+	line-height: 1.4;
+	max-width: 280px;
+	position: absolute;
+	text-align: center;
+	top: 0;
+	word-break: break-all;
+	word-wrap: break-word;
+	visibility: hidden
+}
+
+.medium-editor-anchor-preview a {
+	color: #fff;
+	display: inline-block;
+	margin: 5px 5px 10px
+}
+
+.medium-editor-placeholder-relative:after,
+.medium-editor-placeholder:after {
+	content: attr(data-placeholder)!important;
+	white-space: pre;
+	padding: inherit;
+	margin: inherit;
+	font-style: italic
+}
+
+.medium-editor-anchor-preview-active {
+	visibility: visible
+}
+
+.medium-editor-dragover {
+	background: #ddd
+}
+
+.medium-editor-image-loading {
+	-webkit-animation: medium-editor-image-loading 1s infinite ease-in-out;
+	animation: medium-editor-image-loading 1s infinite ease-in-out;
+	background-color: #333;
+	border-radius: 100%;
+	display: inline-block;
+	height: 40px;
+	width: 40px
+}
+
+.medium-editor-placeholder {
+	position: relative
+}
+
+.medium-editor-placeholder:after {
+	position: absolute;
+	left: 0;
+	top: 0
+}
+
+.medium-editor-placeholder-relative,
+.medium-editor-placeholder-relative:after {
+	position: relative
+}
+
+.medium-toolbar-arrow-over:before,
+.medium-toolbar-arrow-under:after {
+	border-style: solid;
+	content: '';
+	display: block;
+	height: 0;
+	left: 50%;
+	margin-left: -8px;
+	position: absolute;
+	width: 0
+}
+
+.medium-toolbar-arrow-under:after {
+	border-width: 8px 8px 0
+}
+
+.medium-toolbar-arrow-over:before {
+	border-width: 0 8px 8px;
+	top: -8px
+}
+
+.medium-editor-toolbar {
+	left: 0;
+	position: absolute;
+	top: 0;
+	visibility: hidden
+}
+
+.medium-editor-toolbar ul {
+	margin: 0;
+	padding: 0
+}
+
+.medium-editor-toolbar li {
+	float: left;
+	list-style: none;
+	margin: 0;
+	padding: 0
+}
+
+.medium-editor-toolbar li button {
+	box-sizing: border-box;
+	cursor: pointer;
+	display: block;
+	font-size: 14px;
+	line-height: 1.33;
+	margin: 0;
+	padding: 15px;
+	text-decoration: none
+}
+
+.medium-editor-toolbar li button:focus {
+	outline: 0
+}
+
+.medium-editor-toolbar li .medium-editor-action-underline {
+	text-decoration: underline
+}
+
+.medium-editor-toolbar li .medium-editor-action-pre {
+	font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+	font-size: 12px;
+	font-weight: 100;
+	padding: 15px 0
+}
+
+.medium-editor-toolbar-active {
+	visibility: visible
+}
+
+.medium-editor-sticky-toolbar {
+	position: fixed;
+	top: 1px
+}
+
+.medium-editor-relative-toolbar {
+	position: relative
+}
+
+.medium-editor-toolbar-active.medium-editor-stalker-toolbar {
+	-webkit-animation: medium-editor-pop-upwards 160ms forwards linear;
+	animation: medium-editor-pop-upwards 160ms forwards linear
+}
+
+.medium-editor-action-bold {
+	font-weight: bolder
+}
+
+.medium-editor-action-italic {
+	font-style: italic
+}
+
+.medium-editor-toolbar-form {
+	display: none
+} 
+
+.medium-editor-toolbar-form .medium-editor-toolbar-form-row {
+	line-height: 14px;
+	margin-left: 5px;
+	padding-bottom: 5px
+}
+
+.medium-editor-toolbar-form .medium-editor-toolbar-input,
+.medium-editor-toolbar-form label {
+	border: none;
+	box-sizing: border-box;
+	font-size: 14px;
+	margin: 0;
+	padding: 6px;
+	width: 316px;
+	display: inline-block
+}
+
+.medium-editor-toolbar-form .medium-editor-toolbar-input:focus,
+.medium-editor-toolbar-form label:focus {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	border: none;
+	box-shadow: none;
+	outline: 0
+}
+
+.medium-editor-toolbar-form a {
+	display: inline-block;
+	font-size: 24px;
+	font-weight: bolder;
+	margin: 0 10px;
+	text-decoration: none
+}
+
+.medium-editor-toolbar-form-active {
+	display: block
+}
+
+.medium-editor-toolbar-actions:after {
+	clear: both;
+	content: "";
+	display: table
+}
+
+.medium-editor-element {
+	word-wrap: break-word;
+	min-height: 30px
+}
+
+.medium-editor-element img {
+	max-width: 100%
+}
+
+.medium-editor-element sub {
+	vertical-align: sub
+}
+
+.medium-editor-element sup {
+	vertical-align: super
+}
+
+.medium-editor-hidden {
+	display: none
+}
+
+/* default.css */
+
+.medium-toolbar-arrow-under:after {
+  border-color: #242424 transparent transparent transparent;
+  top: 50px; }
+
+.medium-toolbar-arrow-over:before {
+  border-color: transparent transparent #242424 transparent;
+  top: -8px; }
+
+.medium-editor-toolbar {
+  background-color: #242424;
+  background: -webkit-linear-gradient(top, #242424, rgba(36, 36, 36, 0.75));
+  background: linear-gradient(to bottom, #242424, rgba(36, 36, 36, 0.75));
+  border: 1px solid #000;
+  border-radius: 5px;
+  box-shadow: 0 0 3px #000; }
+  .medium-editor-toolbar li button {
+    background-color: #242424;
+    background: -webkit-linear-gradient(top, #242424, rgba(36, 36, 36, 0.89));
+    background: linear-gradient(to bottom, #242424, rgba(36, 36, 36, 0.89));
+    border: 0;
+    border-right: 1px solid #000;
+    border-left: 1px solid #333;
+    border-left: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.3);
+    color: #fff;
+    height: 50px;
+    min-width: 50px;
+    -webkit-transition: background-color .2s ease-in;
+            transition: background-color .2s ease-in; }
+    .medium-editor-toolbar li button:hover {
+      background-color: #000;
+      color: yellow; }
+  .medium-editor-toolbar li .medium-editor-button-first {
+    border-bottom-left-radius: 5px;
+    border-top-left-radius: 5px; }
+  .medium-editor-toolbar li .medium-editor-button-last {
+    border-bottom-right-radius: 5px;
+    border-top-right-radius: 5px; }
+  .medium-editor-toolbar li .medium-editor-button-active {
+    background-color: #000;
+    background: -webkit-linear-gradient(top, #242424, rgba(0, 0, 0, 0.89));
+    background: linear-gradient(to bottom, #242424, rgba(0, 0, 0, 0.89));
+    color: #fff; }
+
+.medium-editor-toolbar-form {
+  background: #242424;
+  border-radius: 5px;
+  color: #999; }
+  .medium-editor-toolbar-form .medium-editor-toolbar-input {
+    background: #242424;
+    box-sizing: border-box;
+    color: #919191;
+    height: 50px; }
+  .medium-editor-toolbar-form a {
+    color: #fff; }
+
+.medium-editor-toolbar-anchor-preview {
+  background: #242424;
+  border-radius: 5px;
+  color: #fff; }
+
+.medium-editor-placeholder:after {
+  color: #b3b3b1; }
+  
+  
+  /*! 
+ * medium-editor-insert-plugin v2.5.1 - jQuery insert plugin for MediumEditor
+ *
+ * http://linkesch.com/medium-editor-insert-plugin
+ * 
+ * Copyright (c) 2014 Pavel Linkesch (http://linkesch.com)
+ * Released under the MIT license
+ */
+
+.medium-insert-images,.mediumInsert{text-align:center}.medium-insert-images figure,.mediumInsert figure{margin:0;display:block}.medium-insert-images figure img,.mediumInsert figure img{max-width:100%;margin-top:1em;vertical-align:top}.medium-insert-images figure:first-child img,.mediumInsert figure:first-child img{margin-top:0}.medium-insert-images-left.mediumInsert,.medium-insert-images.medium-insert-images-left,.mediumInsert.small{max-width:33.33%;float:left;margin:0 30px 20px 0}.medium-insert-images-right.mediumInsert,.medium-insert-images.medium-insert-images-right{max-width:33.33%;float:right;margin:0 0 20px 30px}.medium-insert-images-grid.mediumInsert,.medium-insert-images.medium-insert-images-grid{display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-ms-flex-align:start;align-items:flex-start;-ms-flex-pack:center;justify-content:center;margin:.5em -.5em}.medium-insert-images-grid.mediumInsert figure,.medium-insert-images.medium-insert-images-grid figure{width:33.33%;display:inline-block}.medium-insert-images-grid.mediumInsert figure img,.medium-insert-images.medium-insert-images-grid figure img{max-width:calc(100% - 1em);margin:.5em}.medium-insert-embeds,.mediumInsert-embeds{text-align:center;margin:1em 0;position:relative}.medium-insert-embeds div,.medium-insert-embeds iframe,.mediumInsert-embeds div,.mediumInsert-embeds iframe{margin:0 auto!important}.medium-insert-embeds-left.mediumInsert-embeds,.medium-insert-embeds.medium-insert-embeds-left{width:33.33%;float:left;margin:0 30px 20px 0}.medium-insert-embeds-right.mediumInsert-embeds,.medium-insert-embeds.medium-insert-embeds-right{width:33.33%;float:right;margin:0 0 20px 30px}.medium-insert-embeds figure,.medium-insert-images figure,.mediumInsert figure,.mediumInsert-embeds figure{position:relative}.medium-insert-embeds figure figcaption,.medium-insert-images figure figcaption,.mediumInsert figure figcaption,.mediumInsert-embeds figure figcaption{position:relative;z-index:1;display:block;text-align:center;margin:10px 0;color:#919191;font-size:.8em;font-style:italic;outline:0 solid transparent}.medium-editor-insert-plugin:focus,.medium-insert-embeds figure figcaption:focus,.medium-insert-images figure figcaption:focus,.mediumInsert figure figcaption:focus,.mediumInsert-embeds figure figcaption:focus{outline:0 solid transparent}.medium-editor-insert-plugin{outline:0 solid transparent}.medium-editor-insert-plugin .clearfix:after,.medium-editor-insert-plugin .clearfix:before,.medium-editor-insert-plugin:after,.medium-editor-insert-plugin:before{content:" ";display:table;clear:both}.medium-editor-insert-plugin p{margin:1em 0}.medium-editor-insert-plugin progress{display:block;margin:1em auto}.medium-editor-insert-plugin .hide{display:none}.medium-editor-insert-plugin.medium-editor-placeholder:after{padding:1em 0}.medium-editor-insert-plugin .medium-insert-buttons{position:absolute;color:#ddd;font-size:.9em}.medium-editor-insert-plugin .medium-insert-buttons button{display:block;cursor:pointer;color:rgba(0,0,0,.68);background:#fff;width:32px;height:32px;box-sizing:border-box;border-radius:20px;border:1px solid rgba(0,0,0,.68);line-height:30px;text-align:center;padding:0}.medium-editor-insert-plugin .medium-insert-buttons .medium-insert-buttons-show{font-size:25px;transform:rotate(0);transition:transform 100ms}.medium-editor-insert-plugin .medium-insert-buttons .medium-insert-buttons-show span{display:block;margin-top:-6px}.medium-editor-insert-plugin .medium-insert-buttons .medium-insert-buttons-show.medium-insert-buttons-rotate{transition:transform 250ms;transform:rotate(45deg)}.medium-editor-insert-plugin .medium-insert-buttons .medium-insert-buttons-addons{margin:0;padding:0;list-style:none;display:none;position:relative;z-index:2;left:55px;top:-32px}.medium-editor-insert-plugin .medium-insert-buttons .medium-insert-buttons-addons li{display:inline-block;margin:0 5px}.medium-editor-insert-plugin .medium-insert-buttons .medium-insert-buttons-addons li .fa{font-size:15px}.medium-insert-caption-placeholder{position:relative}.medium-insert-caption-placeholder:after{position:absolute;top:0;left:0;width:100%;text-align:center;content:attr(data-placeholder)}.dragging{cursor:move}.medium-insert-image-active{outline:2px solid #03A9F4}.medium-insert-images-toolbar{display:none}.medium-insert-images,.mediumInsert{margin:1em 0}.medium-insert-images .dragged,.mediumInsert .dragged{position:absolute;top:0;opacity:.5;z-index:2000}.medium-insert-images .placeholder,.mediumInsert .placeholder{position:relative;margin:0;padding:0;border:0}.medium-insert-images .medium-insert-images-progress,.mediumInsert .medium-insert-images-progress{position:absolute;width:100%;height:100%;top:0;right:0;background:rgba(255,255,255,.4)}.medium-insert-embeds-input{position:relative;color:#919191;z-index:1;text-align:left}.medium-insert-embeds-placeholder{position:relative}.medium-insert-embeds-placeholder:after{position:absolute;top:0;left:0;content:attr(data-placeholder);color:#919191}.medium-insert-embeds-selected .medium-insert-embed{outline:2px solid #000}.medium-insert-embeds-toolbar{display:none}.medium-insert-embeds .medium-insert-embeds-overlay,.mediumInsert-embeds .medium-insert-embeds-overlay{position:absolute;width:100%;height:100%;top:0;left:0}
+
+
+
+
+/* theme beagle */
+/* https://yabwe.github.io/medium-editor/bower_components/medium-editor/dist/css/themes/beagle.css */
+.medium-toolbar-arrow-under:after {
+  border-color: #000 transparent transparent transparent;
+  top: 40px; }
+
+.medium-toolbar-arrow-over:before {
+  border-color: transparent transparent #000 transparent; }
+
+.medium-editor-toolbar {
+  background-color: #000;
+  border: none;
+  border-radius: 50px; }
+  .medium-editor-toolbar li button {
+    background-color: transparent;
+    border: none;
+    box-sizing: border-box;
+    color: #ccc;
+    height: 40px;
+    min-width: 40px;
+    padding: 5px 12px;
+    -webkit-transition: background-color .2s ease-in, color .2s ease-in;
+            transition: background-color .2s ease-in, color .2s ease-in; }
+    .medium-editor-toolbar li button:hover {
+      background-color: #000;
+      color: #a2d7c7; }
+  .medium-editor-toolbar li .medium-editor-button-first {
+    border-bottom-left-radius: 50px;
+    border-top-left-radius: 50px;
+    padding-left: 24px; }
+  .medium-editor-toolbar li .medium-editor-button-last {
+    border-bottom-right-radius: 50px;
+    border-right: none;
+    border-top-right-radius: 50px;
+    padding-right: 24px; }
+  .medium-editor-toolbar li .medium-editor-button-active {
+    background-color: #000;
+    color: #a2d7c7; }
+
+.medium-editor-toolbar-form {
+  background: #000;
+  border-radius: 50px;
+  color: #ccc;
+  overflow: hidden; }
+  .medium-editor-toolbar-form .medium-editor-toolbar-input {
+    background: #000;
+    box-sizing: border-box;
+    color: #ccc;
+    height: 40px;
+    padding-left: 16px;
+    width: 220px; }
+    .medium-editor-toolbar-form .medium-editor-toolbar-input::-webkit-input-placeholder {
+      color: #f8f5f3;
+      color: rgba(248, 245, 243, 0.8); }
+    .medium-editor-toolbar-form .medium-editor-toolbar-input:-moz-placeholder {
+      /* Firefox 18- */
+      color: #f8f5f3;
+      color: rgba(248, 245, 243, 0.8); }
+    .medium-editor-toolbar-form .medium-editor-toolbar-input::-moz-placeholder {
+      /* Firefox 19+ */
+      color: #f8f5f3;
+      color: rgba(248, 245, 243, 0.8); }
+    .medium-editor-toolbar-form .medium-editor-toolbar-input:-ms-input-placeholder {
+      color: #f8f5f3;
+      color: rgba(248, 245, 243, 0.8); }
+  .medium-editor-toolbar-form a {
+    color: #ccc;
+    -webkit-transform: translateY(2px);
+            transform: translateY(2px); }
+  .medium-editor-toolbar-form .medium-editor-toolbar-close {
+    margin-right: 16px; }
+
+.medium-editor-toolbar-anchor-preview {
+  background: #000;
+  border-radius: 50px;
+  padding: 5px 12px; }
+
+.medium-editor-anchor-preview a {
+  color: #ccc;
+  text-decoration: none; }
+  
+
+/* ------------------------------------------------------------------------------
+*
+*  # Bootstrap tags input
+*
+*  Styles for tagsinput.js - tags input for Bootstrap
+*
+* ---------------------------------------------------------------------------- */
+.bootstrap-tagsinput {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  display: inline-block;
+  padding: 0 0 0.125rem 0;
+  vertical-align: middle;
+  width: 100%;
+  border-radius: 0.1875rem; }
+  .bootstrap-tagsinput input {
+    direction: ltr;
+    border: 0;
+    outline: 0;
+    background-color: transparent;
+    padding: 0.3125rem 0.875rem;
+    margin-top: 0.125rem;
+    margin-left: 0.125rem;
+    width: auto !important;
+    max-width: 50%;
+    min-width: 4rem;
+    box-shadow: none; }
+  .input-group .bootstrap-tagsinput {
+    width: 1%;
+    -ms-flex: 1 1 auto;
+        flex: 1 1 auto; }
+  .bootstrap-tagsinput .twitter-typeahead {
+    width: auto; }
+  .bootstrap-tagsinput .tt-dropdown-menu {
+    margin-top: 0.25rem;
+    min-width: 11.25rem; }
+  .bootstrap-tagsinput .tag {
+    margin: 0.125rem 0 0 0.125rem;
+    padding: 0.3125rem 0.875rem;
+    padding-right: 2.375rem;
+    float: left;
+    position: relative;
+    border-radius: 0.1875rem;
+    transition: all ease-in-out 0.15s; }
+    @media screen and (prefers-reduced-motion: reduce) {
+      .bootstrap-tagsinput .tag {
+        transition: none; } }
+    .bootstrap-tagsinput .tag:not([class*=bg-]) {
+      background-color: #eee;
+      color: #333; }
+      .bootstrap-tagsinput .tag:not([class*=bg-]):hover, .bootstrap-tagsinput .tag:not([class*=bg-]):focus {
+        background-color: #03A9F4;
+        color: #fff; }
+    .bootstrap-tagsinput .tag [data-role="remove"] {
+      cursor: pointer;
+      position: absolute;
+      top: 50%;
+      right: 0.875rem;
+      line-height: 1;
+      margin-top: -0.34375rem;
+      opacity: 0.7;
+      transition: opacity ease-in-out 0.15s; }
+      @media screen and (prefers-reduced-motion: reduce) {
+        .bootstrap-tagsinput .tag [data-role="remove"] {
+          transition: none; } }
+      .bootstrap-tagsinput .tag [data-role="remove"]:hover {
+        opacity: 1; }
+      .bootstrap-tagsinput .tag [data-role="remove"]:after {
+        content: '\ed6a';
+        font-family: "icomoon";
+        display: block;
+        font-size: 0.6875rem;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale; }
+.tokenfield .token>.close:after, .bootstrap-tagsinput .tag [data-role=remove]:after {
+    content: "\f00d";
+    font-weight: 900;
+    font-family: "Font Awesome 5 Free";
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    display: inline-block;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    line-height: 1;
+	font-size: .6875rem;
+}
+        
+/* ruizyi */
+
+				
+.section-cogs {
+	top: 100px;
+    right: 0px;	
+    width: 52px;
+    height: 52px;
+    line-height: 52px;
+    font-size: 18px;
+    position: fixed;
+    display: block;
+    z-index: 900;
+    transition: all .2s ease;
+    animation: fadeIn .3s ease;
+    -webkit-animation: fadeIn .3s ease;
+    background: #222;
+    border-radius: 52px 0 0 52px;
+    text-align: center;
+    border: 1px solid #444;
+    cursor: pointer;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    color: rgba(255,255,255,.5);
+}
+.section-setting-cogs {
+    position: fixed;
+    right: -100%;
+    top: 0;
+    height: 100%;
+    z-index: 999;
+    width: 500px;
+    max-width: 100%;
+    background: #fff;
+    box-shadow: -2px 0 20px 0 rgba(0,0,0,0.2);
+    transition: all .45s ease;
+    z-index: 999999;    	
+}
+.section-setting-cogs .uniqueIdWrap {
+    font-weight: bold;
+    color: #92b5c1;
+    background-color: #fffbe9;
+    padding: 5px 10px;
+}
+.section-setting-cogs-header {
+	height: 64px;
+	line-height: 64px;
+	font-size: 15px;
+	font-weight: 500;
+	color: #333;
+	position: relative;	
+	padding: 0 24px;
+	border-bottom: 1px solid #333;
+}
+.section-setting-cogs-header span {
+    display: inline-block;
+    max-width: 170px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.section-setting-cogs-header .close-setting-cogs {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 64px;
+    height: 64px;
+    line-height: 61px;
+    text-align: center;
+    background: #222;
+    color: rgba(255,255,255,.5);
+    font-size: 28px;
+    font-weight: 300;
+    cursor: pointer;
+    transition: all .3s ease;
+}
+.section-setting-cogs-body {
+    max-height: calc(100vh - 64px);
+    overflow-y: scroll;
+    background: #fff;	
+}
+.section-setting-cogs-body .container {
+	padding: 1.5rem;
+}
+.medium-editor-insert-plugin .medium-insert-buttons {
+    left: -25px !important;	
+}
+
+@media screen and (max-width: 600px) {  
+    left: inherit !important;	
+}

@@ -1,0 +1,118 @@
+@charset "utf-8";
+
+@font-face {
+	font-family: 'puzzle-';
+	src: url('../../fonts/puzzle-.ttf?n7qhdv') format('truetype'),
+    url('../../fonts/puzzle-.woff?n7qhdv') format('woff'),
+    url('../../fonts/puzzle-.svg?n7qhdv#puzzle-') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+  font-family: 'mbc';
+  src:
+    url('../../fonts/mbc.ttf?v262dn') format('truetype'),
+    url('../../fonts/mbc.woff?v262dn') format('woff'),
+    url('../../fonts/mbc.svg?v262dn#mbc') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+i.mbc, span.mbc {
+  font-family: 'mbc' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.mbcb-close:before {
+  content: "\e900";
+}
+.mbcb-open:before {
+  content: "\e901";
+}
+.mbcc-close:before {
+  content: "\e902";
+}
+.mbcc-open:before {
+  content: "\e903";
+}
+.mbcmbc-close:before {
+  content: "\e904";
+}
+.mbcmbc-open:before {
+  content: "\e905";
+}
+.mbcm-close:before {
+  content: "\e906";
+}
+.mbcm-open:before {
+  content: "\e907";
+}
+
+i.puzzle, span.puzzle {
+	font-family: 'puzzle-' !important;
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.puzzle-note_puzzle-close:before {
+	content: "\e900";
+}
+
+.puzzle-note_puzzle-open:before {
+	content: "\e901";
+}
+
+.puzzle-puzzle-logo-black-close:before {
+	content: "\e902";
+}
+
+.puzzle-puzzle-logo-black-open:before {
+	content: "\e903";
+}
+
+.puzzle-puzzle-rotate-close:before {
+	content: "\e904";
+}
+
+.puzzle-puzzle-rotate-open:before {
+	content: "\e905";
+}
+
+.puzzle-puzzle-text-close:before {
+	content: "\e906";
+}
+
+.puzzle-puzzle-text-open:before {
+	content: "\e907";
+}
+
+body, h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+
+	font-family: 'Noto Sans KR', "Apple Gothic",'Malgun Gothic','맑은 고딕',dotum,'돋움',sans-serif;
+	font-weight: 400;
+}
+html {
+  font-size: 14px;
+}
+
+body {
+  font-size: 1rem;
+  color: #000;
+  -webkit-font-smoothing: antialiased;
+}
+b {
+	font-weight: 700;
+}

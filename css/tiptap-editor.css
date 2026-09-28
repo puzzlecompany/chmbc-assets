@@ -1,0 +1,66 @@
+/* chmbc-www editor (Tiptap) – a plain toolbar + writing surface in the spirit of
+   Tiptap's "Simple Editor" template, styled to sit inside the site's Bootstrap 4 forms. */
+.chmbc-editor {
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  background: #fff;
+  margin-top: 4px;
+}
+.chmbc-editor__toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 2px;
+  padding: 6px 8px;
+  border-bottom: 1px solid #e3e6ea;
+  background: #f8f9fa;
+  border-radius: 4px 4px 0 0;
+}
+.chmbc-editor__btn {
+  min-width: 32px;
+  height: 30px;
+  padding: 0 8px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  background: transparent;
+  color: #343a40;
+  font-size: 14px;
+  line-height: 28px;
+  cursor: pointer;
+}
+.chmbc-editor__btn:hover { background: #e9ecef; }
+.chmbc-editor__btn.is-active { background: #dee2e6; border-color: #ced4da; }
+.chmbc-editor__sep { width: 1px; height: 22px; margin: 0 6px; background: #dee2e6; }
+.chmbc-editor__btn[data-cmd="link"], .chmbc-editor__btn[data-cmd="image"], .chmbc-editor__btn[data-cmd="youtube"] { font-size: 13px; }
+.chmbc-editor__btn:disabled { cursor: default; opacity: .7; }
+.chmbc-editor__btn.is-uploading { color: transparent; position: relative; }
+.chmbc-editor__btn.is-uploading::after {
+  content: ""; position: absolute; left: 50%; top: 50%; width: 14px; height: 14px; margin: -7px 0 0 -7px;
+  border: 2px solid #adb5bd; border-top-color: #007bff; border-radius: 50%;
+  animation: chmbc-editor-spin .7s linear infinite;
+}
+@keyframes chmbc-editor-spin { to { transform: rotate(360deg); } }
+
+.chmbc-editor__surface { padding: 12px 14px; }
+.chmbc-editor__content {
+  min-height: 500px;
+  outline: none;
+  font-size: 16px;
+  line-height: 1.7;
+  word-break: break-word;
+}
+.chmbc-editor__content > * + * { margin-top: 0.6em; }
+.chmbc-editor__content ul, .chmbc-editor__content ol { padding-left: 1.5em; }
+.chmbc-editor__content blockquote { margin: 0; padding-left: 1em; border-left: 3px solid #ced4da; color: #6c757d; }
+.chmbc-editor__content a { color: #007bff; text-decoration: underline; }
+.chmbc-editor__content p.is-editor-empty:first-child::before {
+  content: attr(data-placeholder);
+  color: #adb5bd;
+  float: left;
+  height: 0;
+  pointer-events: none;
+}
+.chmbc-editor__content img { max-width: 100%; height: auto; display: block; }
+.chmbc-editor__content div[data-youtube-video] { margin: 0.6em 0; }
+.chmbc-editor__content div[data-youtube-video] iframe { max-width: 100%; border: 0; }
+.chmbc-editor__content .ProseMirror-selectednode { outline: 2px solid #007bff; }

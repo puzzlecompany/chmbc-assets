@@ -1,0 +1,38 @@
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css');
+
+	
+ 
+ [class^="stack-"]:before, [class*=" stack-"]:before { 
+	font-weight: 900;
+	font-family: "Font Awesome 5 Free";
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-font-smoothing: antialiased;
+	display: inline-block;
+	font-style: normal;
+	font-variant: normal;
+	text-rendering: auto;
+	line-height: 1;	 
+}
+ 
+.stack-down-open-big:before { content: '\f078'; } /* '' */
+.stack-left-open-big:before { content: '\f053'; } /* '' */
+.stack-right-open-big:before { content: '\f054'; } /* '' */
+.stack-up-open-big:before { content: '\f077'; } /* '' */
+.stack-basket:before { content: '\f07a'; } /* '' */
+.stack-search:before { content: '\f002'; } /* '' */
+.stack-down-dir:before { content: '\f0d7'; } /* '' */
+.stack-left-dir:before { content: '\f0d9'; } /* '' */
+.stack-right-dir:before { content: '\f0da'; } /* '' */
+.stack-up-dir:before { content: '\f0d8'; } /* '' */
+.stack-down-open:before { content: '\f107'; } /* '' */
+.stack-left-open:before { content: '\f104'; } /* '' */
+.stack-right-open:before { content: '\f105'; } /* '' */
+.stack-up-open:before { content: '\f106'; } /* '' */
+.stack-menu:before { content: '\f0c9'; } /* '' */
+.stack-users:before { content: '\f500'; } /* '' */
+.stack-publish:before { content: '\f093'; } /* '' */
+.stack-trash:before { content: '\f2ed'; } /* '' */
+.stack-bell:before { content: '\f0f3'; } /* '' */
+.stack-cog:before { content: '\f013'; } /* '' */
+.stack-plus-circled:before { content: '\f055'; } /* '' */
+.stack-dot-3:before { content: '\f141'; } /* '' */
