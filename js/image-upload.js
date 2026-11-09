@@ -8,6 +8,9 @@
  * Flow: POST /editor_upload {action: session} → one-time Cloudflare Images
  * upload URL → POST the file to it → resolve the delivery url. No credential
  * ever reaches this script; the upload URL is single-use and expires.
+ * The session request carries `page` (this page's path + query) so the server
+ * can tell which board the image is for: admin-only boards get the `origin`
+ * variant url instead of `1024`.
  * Errors reject with an Error whose message is meant to be shown to the user.
  */
 (function () {
@@ -52,6 +55,7 @@
     fd.append('name', file.name);
     fd.append('size', String(file.size));
     fd.append('type', file.type);
+    fd.append('page', location.pathname + location.search);
     return post(fd).then(function (session) {
       var body = new FormData();
       body.append('file', file, file.name);
